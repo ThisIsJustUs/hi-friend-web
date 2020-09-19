@@ -19,9 +19,15 @@ type InputProps = {
     label: string;
     idName: string;
     placeholder: string;
+    type?: string;
 };
 
-const Input: React.FC<InputProps> = ({ label, idName, placeholder }) => {
+const Input: React.FC<InputProps> = ({
+    label,
+    idName,
+    placeholder,
+    type = 'text',
+}) => {
     return (
         <div className='my-5'>
             <label className='font-display' htmlFor='email'>
@@ -31,7 +37,8 @@ const Input: React.FC<InputProps> = ({ label, idName, placeholder }) => {
                 id={idName}
                 name={idName}
                 placeholder={placeholder}
-                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500'
+                type={type}
+                className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green2'
             />
         </div>
     );
@@ -86,10 +93,11 @@ const Register: React.FC<{}> = () => {
                                 label='Email'
                                 idName='email'
                                 placeholder='justus@hifriend.com'
+                                type='email'
                             />
                         </div>
                         <button
-                            className='bg-green2 mt-5 w-full hover:bg-blue-700 text-white py-2 px-4 rounded-sm focus:outline-none focus:shadow-outline'
+                            className='bg-green2 mt-5 w-full text-white py-2 px-4 rounded-sm focus:outline-none focus:shadow-outline'
                             type='submit'
                         >
                             Sign up
