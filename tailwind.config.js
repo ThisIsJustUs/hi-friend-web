@@ -1,15 +1,46 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        'accent-1': '#333',
-      },
+    important: true,
+    future: {
+        removeDeprecatedGapUtilities: true,
     },
-  },
-  variants: {},
-  plugins: [],
-}
+    purge: [
+        './components/**/*.{js,ts,jsx,tsx}',
+        './pages/**/*.{js,ts,jsx,tsx}',
+    ],
+    theme: {
+        fontFamily: {
+            display: ['PT Serif', 'sans-serif'],
+            body: ['Open Sans', 'sans-serif'],
+        },
+        container: {
+            center: true,
+        },
+        extend: {
+            fontFamily: {
+                sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+            },
+        },
+        extend: {
+            colors: {
+                green1: '#507255',
+                green2: '#6EB257',
+                green3: '#4AAD52',
+                green4: '#488B49',
+                soft: '#F8FBEC',
+                grey1: '#F8F9FA',
+                grey2: '#E9ECEF',
+                grey3: '#DEE2E6',
+                grey4: '#CED4DA',
+                grey5: '#ADB5BD',
+                grey6: '#6C757D',
+                grey7: '#495057',
+                grey8: '#495057',
+                grey9: '#212529',
+            },
+        },
+    },
+    variants: {},
+    plugins: [],
+};
